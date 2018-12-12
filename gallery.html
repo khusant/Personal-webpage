@@ -1,0 +1,79 @@
+<html>
+<head>
+     
+    <title>Testing website</title>
+    <script src="jquery-3.3.1.min.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <link rel="stylesheet" type="text/css" href="style.css" >
+    </head>
+<body>
+    
+    <div id="nav-top">
+    <a href="index.html">Home</a>
+    <a href="About.html">About</a>
+        <a href="gallery.html">Gallery</a>
+    <a href="contact.html">Contact</a>
+    
+    </div>
+    <header>Gallery</header>
+        
+    <section id="main"> 
+    <div class="nav-left">
+        <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li> 
+            <li><a href="gallery.html">Gallery</a></li>  
+        <li><a href="contact.html">Contact</a></li> 
+        </ul>
+    
+    </div>
+    <style>
+        #demo {
+           
+            width: 60%;
+            float: left;
+        }
+        
+        
+        #demo img{
+            width: 300px;
+            height: 200px;
+           padding: 5px;
+             border: 1px solid #ddd;
+    border-radius: 4px;
+            box-shadow: 10px 10px 5px 0px rgba(91,93,112,1);
+        }
+        
+        </style>
+    
+    <div id="demo"></div>
+
+        <script>
+
+  $(document).ready(function() {
+
+            $.getJSON('gallery.json', function(data) {
+                $.each(data.images, function(h,p) {
+                    $("#demo").append("<img src=" + p.url + ">");
+
+                });
+            });
+        }); 
+    
+    
+
+        
+        </script>
+          
+        <footer>
+        <address>Tashkent, Uzbekistan</address></footer>
+    </section>   
+    
+    
+   
+    
+    </body>
+
+
+</html>
